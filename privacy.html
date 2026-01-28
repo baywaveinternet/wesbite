@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BayWave Internet | Privacy Policy</title>
+  <meta name="description" content="BayWave Internet Privacy Policy (POPIA) - how we collect, use, and protect your personal information." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbfdff;
+      --card: rgba(255,255,255,0.82);
+      --stroke: rgba(10, 38, 64, 0.10);
+      --deep: #083252;
+      --deep2:#0B4A7A;
+      --aqua: #20C7C6;
+      --sun:  #FF8A3D;
+      --text: #0b1f2e;
+      --muted:#4a6478;
+      --shadow2: 0 10px 28px rgba(8, 50, 82, 0.10);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --grad-primary: linear-gradient(135deg, var(--deep2), var(--aqua));
+      --grad-wave: radial-gradient(1200px 520px at 12% -10%, rgba(32,199,198,0.22), transparent 58%),
+                   radial-gradient(900px 500px at 90% 0%, rgba(11,74,122,0.20), transparent 55%),
+                   linear-gradient(180deg, #ffffff, #f7fbff 65%, #ffffff);
+    }
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--grad-wave);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a{ color: inherit; text-decoration: none; }
+    .container{ width:min(980px, calc(100% - 44px)); margin:0 auto; }
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(251,253,255,0.78);
+      border-bottom: 1px solid rgba(8,50,82,0.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .brand-mark{
+      width: 44px; height: 44px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(11,74,122,0.12), rgba(32,199,198,0.18));
+      border: 1px solid rgba(8,50,82,0.10);
+      display:grid; place-items:center;
+      box-shadow: 0 10px 25px rgba(8,50,82,0.10);
+      overflow:hidden;
+    }
+    .brand-name{ display:flex; flex-direction:column; line-height:1.05; }
+    .brand-name strong{ font-size: 15px; letter-spacing: 0.2px; }
+    .brand-name span{ font-size: 12px; color: var(--muted); }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px; padding: 12px 16px; border-radius: 999px;
+      font-weight: 700; font-size: 13px;
+      border: 1px solid rgba(8,50,82,0.12);
+      background: rgba(255,255,255,0.76);
+      color: var(--deep);
+      box-shadow: 0 10px 18px rgba(8,50,82,0.08);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 14px 24px rgba(8,50,82,0.12); }
+    .btn-primary{
+      background: var(--grad-primary);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #ffffff;
+      box-shadow: 0 18px 35px rgba(11,74,122,0.20);
+    }
+    main{ padding: 34px 0 52px; }
+    .card{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(8,50,82,0.10);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .pad{ padding: 22px; }
+    .eyebrow{
+      display:inline-flex; width: fit-content;
+      gap: 8px; align-items:center;
+      padding: 8px 12px; border-radius: 999px;
+      border: 1px solid rgba(8,50,82,0.10);
+      background: rgba(255,255,255,0.75);
+      color: var(--deep2);
+      font-weight: 700; font-size: 12px;
+      box-shadow: 0 10px 20px rgba(8,50,82,0.06);
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 40px); letter-spacing: -0.6px; color: var(--deep); }
+    .meta{ color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    h2{ margin: 18px 0 8px; font-size: 17px; color: var(--deep); }
+    p, li{ color: var(--muted); font-size: 13.5px; }
+    ul{ padding-left: 18px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .panel{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(8,50,82,0.10);
+      background: rgba(255,255,255,0.74);
+      padding: 14px 16px;
+    }
+    .panel strong{ color: var(--deep); }
+    .callout{
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(32,199,198,0.28);
+      background: rgba(32,199,198,0.10);
+      color: var(--deep);
+    }
+    footer{
+      padding: 34px 0 44px;
+      border-top: 1px solid rgba(8,50,82,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(247,251,255,0.9));
+    }
+    .foot{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 18px; flex-wrap: wrap;
+    }
+    .small{ font-size: 12px; color: rgba(74,100,120,0.92); }
+    .links a{ display:inline-block; margin-right: 14px; color: var(--muted); font-size: 13px; padding: 6px 0; }
+    .links a:hover{ color: var(--deep2); }
+
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Back to BayWave Internet">
+          <div class="brand-mark">
+            <img src="Baywave_Internet_logo_200kb.png" alt="BayWave Internet Logo" style="width:100%; height:100%; object-fit:contain;" />
+          </div>
+          <div class="brand-name">
+            <strong>BayWave Internet</strong>
+            <span>Durban, South Africa</span>
+          </div>
+        </a>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="terms.html">Terms of Service</a>
+          <a class="btn btn-primary" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="pad">
+          <div class="eyebrow">Privacy Policy (POPIA)</div>
+          <h1>BayWave Internet Privacy Policy</h1>
+          <div class="meta">
+            Effective date: <strong>01 January 2026</strong> • Email: <a href="mailto:info@baywave.co.za">info@baywave.co.za</a>
+          </div>
+
+          <p>
+            BayWave Internet (“BayWave”, “we”, “us”) respects your privacy and is committed to protecting your personal information.
+            This Privacy Policy explains what we collect, why we collect it, how we use it, and your rights under applicable South African law,
+            including the Protection of Personal Information Act, 2013 (“POPIA”).
+          </p>
+
+          <h2>1) What information we collect</h2>
+          <div class="grid">
+            <div class="panel">
+              <strong>Information you provide</strong>
+              <ul>
+                <li>Name and contact details (email, phone/WhatsApp).</li>
+                <li>Service address and suburb.</li>
+                <li>Preferred package and installation details.</li>
+                <li>Support information you send us (messages, fault details).</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <strong>Information generated by service use</strong>
+              <ul>
+                <li>Account and billing records (invoices, payment status).</li>
+                <li>Network/service metadata needed to operate and troubleshoot (e.g., line status, session logs).</li>
+                <li>Customer support records (ticket history, troubleshooting actions).</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>2) How we use your information</h2>
+          <ul>
+            <li>To check coverage, process orders, and arrange installation.</li>
+            <li>To provide internet services and customer support.</li>
+            <li>To bill you, collect payments, and manage accounts.</li>
+            <li>To communicate service updates, maintenance notices, and important account information.</li>
+            <li>To improve our service, prevent fraud, and keep our network secure.</li>
+          </ul>
+
+          <h2>3) Lawful basis for processing (POPIA)</h2>
+          <ul>
+            <li><strong>Contractual necessity:</strong> to deliver the services you request.</li>
+            <li><strong>Legitimate interests:</strong> to secure and operate our network, prevent abuse, and provide support.</li>
+            <li><strong>Legal obligation:</strong> to comply with tax and other legal requirements where applicable.</li>
+            <li><strong>Consent (where required):</strong> for marketing messages (you can opt out anytime).</li>
+          </ul>
+
+          <h2>4) Sharing your information</h2>
+          <p>We may share your information with trusted third parties only when necessary, including:</p>
+          <ul>
+            <li>Fibre Network Operators (FNOs) and infrastructure partners to install and maintain fibre.</li>
+            <li>Payment processors or billing systems to manage payments and invoicing.</li>
+            <li>Service providers helping us operate support, communications, or IT systems.</li>
+            <li>Law enforcement or regulators where required by law.</li>
+          </ul>
+          <p>We do not sell your personal information.</p>
+
+          <h2>5) Security</h2>
+          <ul>
+            <li>We use reasonable administrative, technical, and physical safeguards to protect personal information.</li>
+            <li>You should keep your Wi-Fi password secure and notify us if you suspect unauthorized access.</li>
+          </ul>
+
+          <h2>6) Data retention</h2>
+          <p>
+            We keep personal information only as long as necessary for the purposes described above, including meeting legal, billing,
+            and support obligations. Some records (like invoices) may be retained for longer where required by law.
+          </p>
+
+          <h2>7) Your rights</h2>
+          <ul>
+            <li>Request access to the personal information we hold about you.</li>
+            <li>Request correction or updating of your information.</li>
+            <li>Object to processing in certain circumstances.</li>
+            <li>Request deletion where appropriate (subject to legal retention requirements).</li>
+            <li>Opt out of marketing communications at any time.</li>
+          </ul>
+
+          <h2>8) Cookies and website analytics</h2>
+          <p>
+            If we use cookies or analytics, they help us improve our website and user experience. You can control cookies through your browser settings.
+            (If you don’t use cookies/analytics yet, this section can remain as-is.)
+          </p>
+
+          <h2>9) International transfers</h2>
+          <p>
+            If any service providers store data outside South Africa, we will take reasonable steps to ensure adequate protection consistent with POPIA.
+          </p>
+
+          <h2>10) Contact us</h2>
+          <div class="callout">
+            For privacy questions or requests, contact:<br/>
+            <strong>BayWave Internet</strong><br/>
+            Email: <a href="mailto:info@baywave.co.za" style="text-decoration:underline;">info@baywave.co.za</a>
+          </div>
+
+          <h2>11) Changes to this policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. The latest version will be posted on our website with an updated effective date.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="small">
+          © <span id="year"></span> BayWave Internet. All rights reserved.<br/>
+          Email: <a href="mailto:info@baywave.co.za" style="text-decoration:underline;">info@baywave.co.za</a>
+        </div>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="terms.html">Terms</a>
+          <a href="index.html#packages">Packages</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
