@@ -929,12 +929,11 @@
           <a href="mailto:info@baywaveinternet.co.za">Email</a>
         </div>
 
-        <div>
-          <h4>Legal</h4>
-          <a href="#terms" id="termsLink">Terms</a>
-          <a href="#privacy" id="privacyLink">Privacy</a>
-        </div>
-      </div>
+       <div>
+  <h4>Legal</h4>
+  <a href="terms.html">Terms of Service</a>
+  <a href="privacy.html">Privacy Policy</a>
+</div>
 
       <div class="small" style="margin-top:22px;">
         © <span id="year"></span> BayWave Internet. All rights reserved.
@@ -1074,15 +1073,6 @@ Thank you.`;
       leadStatus.innerHTML = `✅ Opening your email app… If it doesn’t open, email <strong>info@baywaveinternet.co.za</strong>.`;
     });
 
-    // ====== Terms/Privacy (simple placeholders) ======
-    document.getElementById("termsLink")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Terms placeholder: Add your service terms, installation policy, fair use policy, and cancellations here.");
-    });
-    document.getElementById("privacyLink")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Privacy placeholder: Add your POPIA-aligned privacy policy here.");
-    });
 
     // Year
     document.getElementById("year").textContent = new Date().getFullYear();
