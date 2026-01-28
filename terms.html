@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BayWave Internet | Terms of Service</title>
+  <meta name="description" content="BayWave Internet Terms of Service - fibre internet services in Durban, South Africa." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbfdff;
+      --card: rgba(255,255,255,0.82);
+      --stroke: rgba(10, 38, 64, 0.10);
+      --deep: #083252;
+      --deep2:#0B4A7A;
+      --aqua: #20C7C6;
+      --sun:  #FF8A3D;
+      --text: #0b1f2e;
+      --muted:#4a6478;
+      --shadow: 0 18px 55px rgba(8, 50, 82, 0.14);
+      --shadow2: 0 10px 28px rgba(8, 50, 82, 0.10);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --grad-primary: linear-gradient(135deg, var(--deep2), var(--aqua));
+      --grad-wave: radial-gradient(1200px 520px at 12% -10%, rgba(32,199,198,0.22), transparent 58%),
+                   radial-gradient(900px 500px at 90% 0%, rgba(11,74,122,0.20), transparent 55%),
+                   linear-gradient(180deg, #ffffff, #f7fbff 65%, #ffffff);
+    }
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--grad-wave);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a{ color: inherit; text-decoration: none; }
+    .container{ width:min(980px, calc(100% - 44px)); margin:0 auto; }
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(251,253,255,0.78);
+      border-bottom: 1px solid rgba(8,50,82,0.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0; gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .brand-mark{
+      width: 44px; height: 44px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(11,74,122,0.12), rgba(32,199,198,0.18));
+      border: 1px solid rgba(8,50,82,0.10);
+      display:grid; place-items:center;
+      box-shadow: 0 10px 25px rgba(8,50,82,0.10);
+      overflow:hidden;
+    }
+    .brand-name{ display:flex; flex-direction:column; line-height:1.05; }
+    .brand-name strong{ font-size: 15px; letter-spacing: 0.2px; }
+    .brand-name span{ font-size: 12px; color: var(--muted); }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px; padding: 12px 16px; border-radius: 999px;
+      font-weight: 700; font-size: 13px;
+      border: 1px solid rgba(8,50,82,0.12);
+      background: rgba(255,255,255,0.76);
+      color: var(--deep);
+      box-shadow: 0 10px 18px rgba(8,50,82,0.08);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 14px 24px rgba(8,50,82,0.12); }
+    .btn-primary{
+      background: var(--grad-primary);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #ffffff;
+      box-shadow: 0 18px 35px rgba(11,74,122,0.20);
+    }
+    main{ padding: 34px 0 52px; }
+    .card{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(8,50,82,0.10);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .pad{ padding: 22px; }
+    .eyebrow{
+      display:inline-flex; width: fit-content;
+      gap: 8px; align-items:center;
+      padding: 8px 12px; border-radius: 999px;
+      border: 1px solid rgba(8,50,82,0.10);
+      background: rgba(255,255,255,0.75);
+      color: var(--deep2);
+      font-weight: 700; font-size: 12px;
+      box-shadow: 0 10px 20px rgba(8,50,82,0.06);
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 40px); letter-spacing: -0.6px; color: var(--deep); }
+    .meta{ color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    h2{ margin: 18px 0 8px; font-size: 17px; color: var(--deep); }
+    p, li{ color: var(--muted); font-size: 13.5px; }
+    ul{ padding-left: 18px; }
+    .note{
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,138,61,0.28);
+      background: rgba(255,178,74,0.10);
+      color: var(--deep);
+    }
+    footer{
+      padding: 34px 0 44px;
+      border-top: 1px solid rgba(8,50,82,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(247,251,255,0.9));
+    }
+    .foot{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 18px; flex-wrap: wrap;
+    }
+    .small{ font-size: 12px; color: rgba(74,100,120,0.92); }
+    .links a{ display:inline-block; margin-right: 14px; color: var(--muted); font-size: 13px; padding: 6px 0; }
+    .links a:hover{ color: var(--deep2); }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Back to BayWave Internet">
+          <div class="brand-mark">
+            <img src="Baywave_Internet_logo_200kb.png" alt="BayWave Internet Logo" style="width:100%; height:100%; object-fit:contain;" />
+          </div>
+          <div class="brand-name">
+            <strong>BayWave Internet</strong>
+            <span>Durban, South Africa</span>
+          </div>
+        </a>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="privacy.html">Privacy Policy</a>
+          <a class="btn btn-primary" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="pad">
+          <div class="eyebrow">Terms of Service</div>
+          <h1>BayWave Internet Terms of Service</h1>
+          <div class="meta">
+            Effective date: <strong>01 January 2026</strong> • Support: <a href="mailto:info@baywave.co.za">info@baywave.co.za</a>
+          </div>
+
+          <p>
+            These Terms of Service (“Terms”) govern your use of BayWave Internet (“BayWave”, “we”, “us”, “our”) services,
+            including fibre internet services provided to homes and businesses. By ordering, activating, or using our services,
+            you agree to these Terms.
+          </p>
+
+          <h2>1) Service description</h2>
+          <ul>
+            <li>We provide fibre internet connectivity where coverage exists and where installation is feasible.</li>
+            <li>Speeds are advertised as “up to” and may vary due to network congestion, Wi-Fi performance, device limits, and third-party infrastructure.</li>
+            <li>Service availability depends on fibre network operator (FNO) coverage and site readiness.</li>
+          </ul>
+
+          <h2>2) Orders, activation, and installation</h2>
+          <ul>
+            <li>Orders are subject to coverage confirmation and acceptance by the relevant FNO.</li>
+            <li>Installation dates are estimates and can change due to FNO scheduling, civil work, permissions, weather, or access constraints.</li>
+            <li>You must ensure safe access to the property and provide any required permissions (estate/building approvals, landlord consent, etc.).</li>
+          </ul>
+
+          <h2>3) Pricing, billing, and payment</h2>
+          <ul>
+            <li>Pricing and promotions are shown on our website or quoted to you in writing. Promotions may be time-limited.</li>
+            <li>Billing typically occurs monthly in advance unless stated otherwise.</li>
+            <li>Late or failed payments may result in service suspension until the account is settled.</li>
+            <li>All prices are in South African Rand (ZAR) unless stated otherwise.</li>
+          </ul>
+
+          <h2>4) Month-to-month, cancellation, and changes</h2>
+          <ul>
+            <li>Unless otherwise agreed, services are provided on a month-to-month basis.</li>
+            <li>To cancel, you must provide notice via email or another official support channel. Cancellation is effective at the end of the current billing cycle unless stated otherwise.</li>
+            <li>Upgrades/downgrades may be subject to FNO rules and lead times. We’ll confirm timelines once submitted.</li>
+          </ul>
+
+          <h2>5) Equipment (router / ONT)</h2>
+          <ul>
+            <li>If a router is provided as “free-to-use”, it remains BayWave’s (or our supplier’s) property unless explicitly sold to you in writing.</li>
+            <li>You must return loan equipment in good condition if requested (e.g., after cancellation), fair wear and tear excepted.</li>
+            <li>Damage, loss, or non-return may incur a replacement fee.</li>
+            <li>The fibre ONT (where applicable) is generally supplied/managed by the FNO and may remain their property.</li>
+          </ul>
+
+          <h2>6) Acceptable use</h2>
+          <p>You agree not to use the service for unlawful activities or in a way that harms the network or other users. This includes:</p>
+          <ul>
+            <li>Illegal content distribution or infringement of intellectual property rights.</li>
+            <li>Network abuse (malware, hacking, DDoS, spam, or unauthorized access attempts).</li>
+            <li>Reselling or sharing the service outside the premises without written approval.</li>
+          </ul>
+
+          <h2>7) Fair usage and network management</h2>
+          <ul>
+            <li>Where packages are described as “uncapped”, usage is not limited by a fixed data cap, but reasonable network management may apply to ensure service quality.</li>
+            <li>We may apply temporary restrictions to protect the network or comply with lawful requests.</li>
+          </ul>
+
+          <h2>8) Support and fault handling</h2>
+          <ul>
+            <li>Support is provided via WhatsApp and/or email as published on our website.</li>
+            <li>Fault resolution times depend on the nature of the issue and may require FNO intervention.</li>
+            <li>You agree to follow reasonable troubleshooting steps (e.g., rebooting equipment, confirming power, checking cables).</li>
+          </ul>
+
+          <h2>9) Service interruptions</h2>
+          <ul>
+            <li>We aim to provide reliable service, but uninterrupted service is not guaranteed.</li>
+            <li>Planned maintenance may occur. We’ll try to notify you when practical.</li>
+            <li>We are not responsible for outages caused by third-party infrastructure, power failures, vandalism, force majeure, or events beyond our control.</li>
+          </ul>
+
+          <h2>10) Liability</h2>
+          <ul>
+            <li>To the extent allowed by law, BayWave is not liable for indirect or consequential loss (e.g., lost profits, business interruption).</li>
+            <li>Our liability for direct losses is limited to the fees paid by you for the affected service period, unless prohibited by law.</li>
+          </ul>
+
+          <h2>11) POPIA and privacy</h2>
+          <p>
+            We process personal information in line with our Privacy Policy and applicable South African law, including POPIA.
+            Please review <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>.
+          </p>
+
+          <h2>12) Changes to these Terms</h2>
+          <p>
+            We may update these Terms from time to time. The latest version will be posted on our website with an updated effective date.
+            Continued use after changes take effect constitutes acceptance.
+          </p>
+
+          <h2>13) Governing law</h2>
+          <p>
+            These Terms are governed by the laws of the Republic of South Africa. Disputes will be handled in the appropriate South African courts.
+          </p>
+
+          <div class="note">
+            <strong>Important:</strong> If you run special promos (e.g., “free installation valued at R1,500”), keep the promo terms in writing (dates, eligibility, and what’s included).
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="small">
+          © <span id="year"></span> BayWave Internet. All rights reserved.<br/>
+          Email: <a href="mailto:info@baywave.co.za" style="text-decoration:underline;">info@baywave.co.za</a>
+        </div>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="index.html#packages">Packages</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
