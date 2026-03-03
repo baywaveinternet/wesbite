@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -641,98 +640,6 @@
   margin-left: 4px;
 }
 
-    .providers{ grid-template-columns: 1fr; }
- }
- }
-
-details.card.provider{ padding: 0; }
-details.card.provider[open]{ outline: 2px solid rgba(32,199,198,0.22); box-shadow: 0 22px 60px rgba(8,50,82,0.16); transform: translateY(-2px); }
-.provider-summary{
-  cursor: pointer;
-  list-style: none;
-  border-radius: var(--radius-xl);
-  outline: none;
-}
-.provider-summary::-webkit-details-marker{ display: none; }
-
-.provider-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  padding: 18px;
-}
-.provider-brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-height: 54px;
-}
-.provider-logo{
-  width: 160px;
-  max-width: 100%;
-  height: 44px;
-  object-fit: contain;
-  filter: saturate(1.02);
-}
-
-.provider-body{ padding-top: 0; }
-.provider-title{
-  margin: 2px 0 10px;
-  font-size: 16px;
-  color: var(--deep);
-  letter-spacing: -0.2px;
-}
-.provider-meta{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0 14px;
-}
-.provider-meta .pill{
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 9px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(8,50,82,0.10);
-  box-shadow: 0 10px 18px rgba(8,50,82,0.06);
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.price-table-wrap{
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(8,50,82,0.10);
-  background: rgba(255,255,255,0.74);
-  box-shadow: 0 12px 22px rgba(8,50,82,0.06);
-  margin-bottom: 14px;
-}
-.price-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-.price-table thead th{
-  text-align: left;
-  padding: 12px 14px;
-  background: linear-gradient(135deg, rgba(11,74,122,0.10), rgba(32,199,198,0.12));
-  color: var(--deep);
-  border-bottom: 1px solid rgba(8,50,82,0.10);
-}
-.price-table tbody td{
-  padding: 11px 14px;
-  border-bottom: 1px solid rgba(8,50,82,0.08);
-  color: var(--muted);
-  font-weight: 600;
-}
-.price-table tbody tr:last-child td{ border-bottom: none; }
-
-  
 /* Signup page */
 .signup-wrap{ padding-top: 6px; }
 .signup-card{ max-width: 980px; margin: 0 auto; }
@@ -748,7 +655,6 @@ details.card.provider[open]{ outline: 2px solid rgba(32,199,198,0.22); box-shado
 .form-actions{ display:flex; gap: 12px; flex-wrap: wrap; align-items:center; justify-content:flex-start; margin-top: 6px; }
 .note{ font-size: 12px; color: var(--muted); }
 
-  
 /* Compact spacing overrides (reduce large blank areas) */
 .section-title{ margin-bottom: 18px; }
 .signup-card .pad{ padding: 18px; }
@@ -759,7 +665,6 @@ details.card.provider[open]{ outline: 2px solid rgba(32,199,198,0.22); box-shado
 .input{ padding: 12px 14px; min-height: 44px; }
 textarea.input{ min-height: 120px; }
 
-  
 /* Professional compact form styling */
 .signup-card{
   max-width: 820px;
@@ -792,54 +697,54 @@ textarea.input{
 .field{
   gap: 6px;
 }
-
-  </style>
+</style>
 </head>
+
 <body>
 <!-- Header / Nav -->
 <header>
-<div class="container">
-<div class="nav">
-<a aria-label="BayWave Internet Home" class="brand" href="#home">
-<div class="brand-mark">
-<img alt="BayWave Internet Logo" src="Baywave_Internet_logo_200kb.png" style="width:100%; height:100%; object-fit:contain;"/>
-</div>
-<div class="brand-name">
-<strong>BayWave Internet</strong>
-<span>Surf the net with Baywave , Internet that moves with you</span>
-</div>
-</a>
-<nav aria-label="Primary navigation">
-<ul>
-<li><a href="#packages">Packages</a></li>
-<li><a href="#voice">Voice</a></li>
-<li><a href="#hosting">Web Hosting</a></li>
-<li><a href="#coverage">Coverage</a></li>
-<li><a href="#business">Business</a></li>
-<li><a href="#support">Support</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<div class="nav-cta">
-<button aria-controls="mobileLinks" aria-expanded="false" class="btn menu-btn" id="menuBtn" type="button">
-            ☰ Menu
-          </button>
-<a class="btn btn-primary" href="#coverage">Check Coverage</a>
-<a class="btn btn-sun" href="#" id="waTop" rel="noopener">WhatsApp</a>
-</div>
-</div>
-<div class="mobile-links" id="mobileLinks">
-<a href="#packages">Packages</a>
-<a href="#voice">Voice</a>
-<a href="#hosting">Web Hosting</a>
-<a href="#coverage">Coverage</a>
-<a href="#business">Business</a>
-<a href="#support">Support</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+  <div class="container">
+    <div class="nav">
+      <a aria-label="BayWave Internet Home" class="brand" href="#home">
+        <div class="brand-mark">
+          <img alt="BayWave Internet Logo" src="Baywave_Internet_logo_200kb.png" style="width:100%; height:100%; object-fit:contain;"/>
+        </div>
+        <div class="brand-name">
+          <strong>BayWave Internet</strong>
+          <span>Surf the net with Baywave , Internet that moves with you</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#voice">Voice</a></li>
+          <li><a href="#hosting">Web Hosting</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <button aria-controls="mobileLinks" aria-expanded="false" class="btn menu-btn" id="menuBtn" type="button">☰ Menu</button>
+        <a class="btn btn-primary" href="#coverage">Check Coverage</a>
+        <a class="btn btn-sun" href="#" id="waTop" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="mobile-links" id="mobileLinks">
+      <a href="#packages">Packages</a>
+      <a href="#voice">Voice</a>
+      <a href="#hosting">Web Hosting</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#business">Business</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </header>
-<!-- Hero -->
 
 <main class="section signup-wrap" id="signup">
   <div class="container">
@@ -942,30 +847,30 @@ textarea.input{
               <select class="input select" id="service" name="service" required>
                 <option value="" disabled selected>Select a package</option>
                 <optgroup label="Vuma">
-<option value="Vuma - 30 Mbps - R499/pm">30 Mbps - R499/pm</option>
-<option value="Vuma - 50 Mbps - R749/pm">50 Mbps - R749/pm</option>
-<option value="Vuma - 100 Mbps - R899/pm">100 Mbps - R899/pm</option>
-<option value="Vuma - 200 Mbps - R1189/pm">200 Mbps - R1189/pm</option>
-<option value="Vuma - 500 Mbps - R1269/pm">500 Mbps - R1269/pm</option>
-<option value="Vuma - 1000 Mbps - R1499/pm">1000 Mbps - R1499/pm</option>
-</optgroup>
-<optgroup label="Openserve">
-<option value="Openserve - 30 Mbps - R549/pm">30 Mbps - R549/pm</option>
-<option value="Openserve - 50 Mbps - R749/pm">50 Mbps - R749/pm</option>
-<option value="Openserve - 100 Mbps - R899/pm">100 Mbps - R899/pm</option>
-<option value="Openserve - 200 Mbps - R1185/pm">200 Mbps - R1185/pm</option>
-<option value="Openserve - 300 Mbps - R1269/pm">300 Mbps - R1269/pm</option>
-<option value="Openserve - 500 Mbps - R1419/pm">500 Mbps - R1419/pm</option>
-</optgroup>
-<optgroup label="Octotel">
-<option value="Octotel - 25 Mbps - R549/pm">25 Mbps - R549/pm</option>
-<option value="Octotel - 55 Mbps - R569/pm">55 Mbps - R569/pm</option>
-<option value="Octotel - 100 Mbps - R720/pm">100 Mbps - R720/pm</option>
-<option value="Octotel - 150 Mbps - R799/pm">150 Mbps - R799/pm</option>
-<option value="Octotel - 300 Mbps - R899/pm">300 Mbps - R899/pm</option>
-<option value="Octotel - 500 Mbps - R1230/pm">500 Mbps - R1230/pm</option>
-<option value="Octotel - 1000 Mbps - R1475/pm">1000 Mbps - R1475/pm</option>
-</optgroup>
+                  <option value="Vuma - 30 Mbps - R499/pm">30 Mbps - R499/pm</option>
+                  <option value="Vuma - 50 Mbps - R749/pm">50 Mbps - R749/pm</option>
+                  <option value="Vuma - 100 Mbps - R899/pm">100 Mbps - R899/pm</option>
+                  <option value="Vuma - 200 Mbps - R1189/pm">200 Mbps - R1189/pm</option>
+                  <option value="Vuma - 500 Mbps - R1269/pm">500 Mbps - R1269/pm</option>
+                  <option value="Vuma - 1000 Mbps - R1499/pm">1000 Mbps - R1499/pm</option>
+                </optgroup>
+                <optgroup label="Openserve">
+                  <option value="Openserve - 30 Mbps - R549/pm">30 Mbps - R549/pm</option>
+                  <option value="Openserve - 50 Mbps - R749/pm">50 Mbps - R749/pm</option>
+                  <option value="Openserve - 100 Mbps - R899/pm">100 Mbps - R899/pm</option>
+                  <option value="Openserve - 200 Mbps - R1185/pm">200 Mbps - R1185/pm</option>
+                  <option value="Openserve - 300 Mbps - R1269/pm">300 Mbps - R1269/pm</option>
+                  <option value="Openserve - 500 Mbps - R1419/pm">500 Mbps - R1419/pm</option>
+                </optgroup>
+                <optgroup label="Octotel">
+                  <option value="Octotel - 25 Mbps - R549/pm">25 Mbps - R549/pm</option>
+                  <option value="Octotel - 55 Mbps - R569/pm">55 Mbps - R569/pm</option>
+                  <option value="Octotel - 100 Mbps - R720/pm">100 Mbps - R720/pm</option>
+                  <option value="Octotel - 150 Mbps - R799/pm">150 Mbps - R799/pm</option>
+                  <option value="Octotel - 300 Mbps - R899/pm">300 Mbps - R899/pm</option>
+                  <option value="Octotel - 500 Mbps - R1230/pm">500 Mbps - R1230/pm</option>
+                  <option value="Octotel - 1000 Mbps - R1475/pm">1000 Mbps - R1475/pm</option>
+                </optgroup>
               </select>
               <div class="hint">Prices are per month. Setup fee R250. Router free-to-use.</div>
             </div>
@@ -988,186 +893,184 @@ textarea.input{
     </div>
   </div>
 </main>
+
 <footer>
-<div class="container">
-<div class="foot">
-<div>
-<div class="brand" style="padding:0; gap:12px;">
-<div class="brand-mark">
-<img alt="BayWave Internet Logo" src="Baywave_Internet_logo_200kb.png" style="width:100%; height:100%; object-fit:contain;"/>
-</div>
-<div class="brand-name">
-<strong>BayWave Internet</strong>
-<span>Durban, South Africa</span>
-</div>
-</div>
-<p class="small" style="margin-top:12px;">
-          Reliable fibre for homes, estates, and small businesses.
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="brand" style="padding:0; gap:12px;">
+          <div class="brand-mark">
+            <img alt="BayWave Internet Logo" src="Baywave_Internet_logo_200kb.png" style="width:100%; height:100%; object-fit:contain;"/>
+          </div>
+          <div class="brand-name">
+            <strong>BayWave Internet</strong>
+            <span>Durban, South Africa</span>
+          </div>
+        </div>
+        <p class="small" style="margin-top:12px;">Reliable fibre for homes, estates, and small businesses.</p>
+        <p class="small">
+          <strong>Email:</strong>
+          <a href="mailto:info@baywave.co.za">info@baywave.co.za</a>
         </p>
-<p class="small">
-<strong>Email:</strong>
-<a href="mailto:info@baywave.co.za">info@baywave.co.za</a>
-</p>
-<img alt="Certified Reseller" src="openweb-certified-reseller-badge.png" style="max-width:220px; margin-top:14px;"/>
-</div>
-<div>
-<h4>Explore</h4>
-<a href="#packages">Packages</a>
-<a href="#voice">Voice</a>
-<a href="#hosting">Web Hosting</a>
-<a href="#coverage">Coverage</a>
-<a href="#business">Business</a>
-<a href="#support">Support</a>
-</div>
-<div>
-<h4>Contact</h4>
-<a href="#contact">Sign Up</a>
-<a href="#" id="waFooter" rel="noopener">WhatsApp</a>
-<a href="mailto:info@baywave.co.za">Email</a>
+        <img alt="Certified Reseller" src="openweb-certified-reseller-badge.png" style="max-width:220px; margin-top:14px;"/>
+      </div>
 
-<div class="small" style="margin-top:10px;">
-  <strong>Payments:</strong> American Express • Apple Pay • Samsung Pay • Debit/Credit Card
-</div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#packages">Packages</a>
+        <a href="#voice">Voice</a>
+        <a href="#hosting">Web Hosting</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#business">Business</a>
+        <a href="#support">Support</a>
+      </div>
 
-</div>
-<div>
-<h4>Legal</h4>
-<a href="terms.html">Terms of Service</a>
-<a href="privacy.html">Privacy Policy</a>
-</div>
-</div>
-<div class="small" style="margin-top:28px; text-align:center;">
+      <div>
+        <h4>Contact</h4>
+        <a href="#contact">Sign Up</a>
+        <a href="#" id="waFooter" rel="noopener">WhatsApp</a>
+        <a href="mailto:info@baywave.co.za">Email</a>
+
+        <div class="small" style="margin-top:10px;">
+          <strong>Payments:</strong> American Express • Apple Pay • Samsung Pay • Debit/Credit Card
+        </div>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="small" style="margin-top:28px; text-align:center;">
       © <span id="year"></span> BayWave Internet. All rights reserved.
     </div>
-</div>
+  </div>
 </footer>
+
 <script>
-    // ====== CONFIG ======
-    // Replace this with your real WhatsApp number in international format (no +, no spaces), e.g. 2772XXXXXXX
-    const WHATSAPP_NUMBER = "27824166284";
+  // ====== CONFIG ======
+  const WHATSAPP_NUMBER = "27824166284";
+  const defaultWaMessage = "Hi BayWave Internet 👋 I’d like to check fibre coverage in Durban. My address/suburb is: ";
+  const waUrl = (message) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-    const defaultWaMessage = "Hi BayWave Internet 👋 I’d like to check fibre coverage in Durban. My address/suburb is: ";
-    const waUrl = (message) =>
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  // ====== NAV: mobile toggle ======
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileLinks = document.getElementById("mobileLinks");
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+      menuBtn.setAttribute("aria-expanded", String(!expanded));
+      mobileLinks.style.display = expanded ? "none" : "block";
+    });
+  }
+  mobileLinks?.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      mobileLinks.style.display = "none";
+      menuBtn?.setAttribute("aria-expanded", "false");
+    });
+  });
 
-    // ====== NAV: mobile toggle ======
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileLinks = document.getElementById("mobileLinks");
-    if (menuBtn) {
-      menuBtn.addEventListener("click", () => {
-        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-        menuBtn.setAttribute("aria-expanded", String(!expanded));
-        mobileLinks.style.display = expanded ? "none" : "block";
-      });
+  // ====== WhatsApp links ======
+  const waTop = document.getElementById("waTop");
+  const waHero = document.getElementById("waHero");
+  const waSupport = document.getElementById("waSupport");
+  const waFooter = document.getElementById("waFooter");
+
+  const setWaHref = (el, msg) => { if (el) el.href = waUrl(msg); };
+  setWaHref(waTop, "Hi BayWave Internet 👋 I’d like help choosing a fibre package in Durban.");
+  setWaHref(waHero, "Hi BayWave Internet 👋 Please help me check coverage and pick a package.");
+  setWaHref(waSupport, "Hi BayWave Internet Support 👋 I need assistance with my fibre connection.");
+  setWaHref(waFooter, "Hi BayWave Internet 👋 I’d like to chat about fibre in Durban.");
+
+  // ====== Voice & Hosting WhatsApp links ======
+  const waVoiceLite = document.getElementById("waVoiceLite");
+  const waVoipBusiness = document.getElementById("waVoipBusiness");
+  const waSipTrunk = document.getElementById("waSipTrunk");
+  const waDomain99 = document.getElementById("waDomain99");
+  const waDomain149 = document.getElementById("waDomain149");
+  const waDomain250 = document.getElementById("waDomain250");
+
+  setWaHref(waVoiceLite, "Hi BayWave Internet 👋 I’d like to sign up for Voice Lite (R129.00 pm).");
+  setWaHref(waVoipBusiness, "Hi BayWave Internet 👋 I’d like to sign up for VOIP Business (R349 pm).");
+  setWaHref(waSipTrunk, "Hi BayWave Internet 👋 I’d like the SIP Trunk package (R1599 pm) for my PBX. Please advise next steps.");
+  setWaHref(waDomain99, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R99).");
+  setWaHref(waDomain149, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R149).");
+  setWaHref(waDomain250, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R250).");
+
+  // ====== Package "Sign Up" fills plan field ======
+  document.querySelectorAll("[data-plan]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const plan = btn.getAttribute("data-plan") || "";
+      const planInput = document.getElementById("leadPlan");
+      if (planInput) planInput.value = plan;
+    });
+  });
+
+  // ====== Coverage checker (mock) ======
+  const checkBtn = document.getElementById("checkBtn");
+  const address = document.getElementById("address");
+  const coverageStatus = document.getElementById("coverageStatus");
+
+  function mockCoverageCheck(addr){
+    const a = (addr || "").toLowerCase();
+    const likelyYes = ["umhlanga","durban north","glenwood","berea","hillcrest","westville","ballito","la lucia","morningside","pinetown"];
+    const likelyMaybe = ["phoenix","chatsworth","newlands","reservoir hills","wyebank","queensburgh"];
+
+    if (!a.trim()) return { ok:false, msg:"Please enter your address or suburb in Durban." };
+    if (likelyYes.some(k => a.includes(k))) return { ok:true, status:"Available", msg:"Good news — fibre is likely available in your area. Tap “Sign Up” or WhatsApp us to confirm and schedule installation." };
+    if (likelyMaybe.some(k => a.includes(k))) return { ok:true, status:"Checking", msg:"We may have coverage options nearby. WhatsApp us your full address for a quick confirmation." };
+    return { ok:true, status:"Need exact address", msg:"We need your full street address to confirm coverage. WhatsApp it to us and we’ll check immediately." };
+  }
+
+  checkBtn?.addEventListener("click", () => {
+    const result = mockCoverageCheck(address?.value);
+    if (!coverageStatus) return;
+
+    if (!result.ok){
+      coverageStatus.innerHTML = `⚠️ <strong>${result.msg}</strong>`;
+      return;
     }
-    // Close mobile menu when a link is clicked
-    mobileLinks?.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        mobileLinks.style.display = "none";
-        menuBtn?.setAttribute("aria-expanded", "false");
-      });
-    });
+    coverageStatus.innerHTML = `✅ <strong>${result.status}:</strong> ${result.msg}`;
 
-    // ====== WhatsApp links ======
-    const waTop = document.getElementById("waTop");
-    const waHero = document.getElementById("waHero");
-    const waSupport = document.getElementById("waSupport");
-    const waFooter = document.getElementById("waFooter");
+    const msg = defaultWaMessage + (address?.value || "");
+    setWaHref(waHero, msg);
+    setWaHref(waTop, msg);
+  });
 
-    const setWaHref = (el, msg) => { if (el) el.href = waUrl(msg); };
-    setWaHref(waTop, "Hi BayWave Internet 👋 I’d like help choosing a fibre package in Durban.");
-    setWaHref(waHero, "Hi BayWave Internet 👋 Please help me check coverage and pick a package.");
-    setWaHref(waSupport, "Hi BayWave Internet Support 👋 I need assistance with my fibre connection.");
-    setWaHref(waFooter, "Hi BayWave Internet 👋 I’d like to chat about fibre in Durban.");
-
-
-// ====== Voice & Hosting WhatsApp links ======
-const waVoiceLite = document.getElementById("waVoiceLite");
-const waVoipBusiness = document.getElementById("waVoipBusiness");
-const waSipTrunk = document.getElementById("waSipTrunk");
-const waDomain99 = document.getElementById("waDomain99");
-const waDomain149 = document.getElementById("waDomain149");
-const waDomain250 = document.getElementById("waDomain250");
-
-setWaHref(waVoiceLite, "Hi BayWave Internet 👋 I’d like to sign up for Voice Lite (R129.00 pm).");
-setWaHref(waVoipBusiness, "Hi BayWave Internet 👋 I’d like to sign up for VOIP Business (R349 pm).");
-setWaHref(waSipTrunk, "Hi BayWave Internet 👋 I’d like the SIP Trunk package (R1599 pm) for my PBX. Please advise next steps.");
-setWaHref(waDomain99, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R99).");
-setWaHref(waDomain149, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R149).");
-setWaHref(waDomain250, "Hi BayWave Internet 👋 Please help me with Domain Hosting (R250).");
-    // ====== Package "Sign Up" fills plan field ======
-    document.querySelectorAll("[data-plan]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const plan = btn.getAttribute("data-plan") || "";
-        const planInput = document.getElementById("leadPlan");
-        if (planInput) planInput.value = plan;
-      });
-    });
-
-    // ====== Coverage checker (mock) ======
-    const checkBtn = document.getElementById("checkBtn");
-    const address = document.getElementById("address");
-    const coverageStatus = document.getElementById("coverageStatus");
-
-    function mockCoverageCheck(addr){
-      // Simple demo logic; replace with your real coverage API / integration.
-      const a = (addr || "").toLowerCase();
-      const likelyYes = ["umhlanga","durban north","glenwood","berea","hillcrest","westville","ballito","la lucia","morningside","pinetown"];
-      const likelyMaybe = ["phoenix","chatsworth","newlands","reservoir hills","wyebank","queensburgh"];
-
-      if (!a.trim()) return { ok:false, msg:"Please enter your address or suburb in Durban." };
-      if (likelyYes.some(k => a.includes(k))) return { ok:true, status:"Available", msg:"Good news — fibre is likely available in your area. Tap “Sign Up” or WhatsApp us to confirm and schedule installation." };
-      if (likelyMaybe.some(k => a.includes(k))) return { ok:true, status:"Checking", msg:"We may have coverage options nearby. WhatsApp us your full address for a quick confirmation." };
-      return { ok:true, status:"Need exact address", msg:"We need your full street address to confirm coverage. WhatsApp it to us and we’ll check immediately." };
+  address?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      checkBtn?.click();
     }
+  });
 
-    checkBtn?.addEventListener("click", () => {
-      const result = mockCoverageCheck(address?.value);
-      if (!coverageStatus) return;
+  // ====== Business quote button (demo) ======
+  const bizQuoteBtn = document.getElementById("bizQuoteBtn");
+  const bizStatus = document.getElementById("bizStatus");
 
-      if (!result.ok){
-        coverageStatus.innerHTML = `⚠️ <strong>${result.msg}</strong>`;
-        return;
-      }
-      coverageStatus.innerHTML = `✅ <strong>${result.status}:</strong> ${result.msg}`;
-
-      // Update WhatsApp message with address
-      const msg = defaultWaMessage + (address?.value || "");
-      setWaHref(waHero, msg);
-      setWaHref(waTop, msg);
-    });
-
-    // Press Enter in address field
-    address?.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        checkBtn?.click();
-      }
-    });
-
-    // ====== Business quote button (demo) ======
-    const bizQuoteBtn = document.getElementById("bizQuoteBtn");
-    const bizStatus = document.getElementById("bizStatus");
-
-    bizQuoteBtn?.addEventListener("click", () => {
-      const name = document.getElementById("bizName")?.value?.trim() || "my business";
-      const area = document.getElementById("bizArea")?.value?.trim() || "Durban";
+  bizQuoteBtn?.addEventListener("click", () => {
+    const name = document.getElementById("bizName")?.value?.trim() || "my business";
+    const area = document.getElementById("bizArea")?.value?.trim() || "Durban";
+    if (bizStatus) {
       bizStatus.innerHTML = `✅ Thanks! We’ll prepare a recommendation for <strong>${name}</strong> in <strong>${area}</strong>. For fastest help, WhatsApp us your address and required speed.`;
-      setWaHref(waSupport, `Hi BayWave Internet 👋 Please send me a business fibre quote. Business: ${name}. Area: ${area}.`);
-    });
+    }
+    setWaHref(waSupport, `Hi BayWave Internet 👋 Please send me a business fibre quote. Business: ${name}. Area: ${area}.`);
+  });
 
-    // ====== Email button (mailto) ======
-    const emailBtn = document.getElementById("emailBtn");
-    const leadStatus = document.getElementById("leadStatus");
+  // ====== Email button (mailto) ======
+  const emailBtn = document.getElementById("emailBtn");
+  const leadStatus = document.getElementById("leadStatus");
 
-    emailBtn?.addEventListener("click", () => {
-      const n = document.getElementById("leadName")?.value?.trim() || "";
-      const e = document.getElementById("leadEmail")?.value?.trim() || "";
-      const p = document.getElementById("leadPlan")?.value?.trim() || "";
-      const a = document.getElementById("address")?.value?.trim() || "";
+  emailBtn?.addEventListener("click", () => {
+    const n = document.getElementById("leadName")?.value?.trim() || "";
+    const e = document.getElementById("leadEmail")?.value?.trim() || "";
+    const p = document.getElementById("leadPlan")?.value?.trim() || "";
+    const a = document.getElementById("address")?.value?.trim() || "";
 
-      const subject = `BayWave Fibre Sign-Up Request${p ? " - " + p : ""}`;
-      const body =
+    const subject = `BayWave Fibre Sign-Up Request${p ? " - " + p : ""}`;
+    const body =
 `Hi BayWave Internet,
 
 I’d like to sign up / check coverage for fibre in Durban.
@@ -1181,88 +1084,86 @@ Please advise next steps and installation availability.
 
 Thank you.`;
 
-      const mailto = `mailto:info@baywave.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+    const mailto = `mailto:info@baywave.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
 
-      leadStatus.innerHTML = `✅ Opening your email app… If it doesn’t open, email <strong>info@baywaveinternet.co.za</strong>.`;
-    });
-
-
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Smooth scrolling for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        const href = a.getAttribute("href");
-        if (!href || href.length < 2) return;
-        const target = document.querySelector(href);
-        if (!target) return;
-
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-
-// ====== Provider pricing accordions (only one open at a time) ======
-const providerDetails = document.querySelectorAll('details.provider');
-providerDetails.forEach(d => {
-  d.addEventListener('toggle', () => {
-    if (!d.open) return;
-    providerDetails.forEach(other => { if (other !== d) other.removeAttribute('open'); });
-  });
-});
-  
-// ====== Signup form (mailto submit) ======
-const signupForm = document.getElementById('signupForm');
-if (signupForm){
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Basic HTML5 validity
-    if (!signupForm.checkValidity()){
-      signupForm.reportValidity();
-      return;
+    if (leadStatus) {
+      leadStatus.innerHTML = `✅ Opening your email app… If it doesn’t open, email <strong>info@baywave.co.za</strong>.`;
     }
-
-    const fd = new FormData(signupForm);
-    const data = Object.fromEntries(fd.entries());
-
-    const lines = [
-      'FIBRE SIGN-UP REQUEST',
-      '=====================',
-      '',
-      `Name: ${data.firstName} ${data.lastName}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Alt Phone: ${data.altPhone}`,
-      data.company ? `Company: ${data.company}` : null,
-      data.complexNumber ? `Complex/Apt No: ${data.complexNumber}` : null,
-      data.complexName ? `Complex/Apt Name: ${data.complexName}` : null,
-      '',
-      'Address:',
-      `  ${data.streetNumber} ${data.streetName}`,
-      `  ${data.suburb}`,
-      `  ${data.city}`,
-      `  ${data.postalCode}`,
-      `  ${data.province}`,
-      `  ${data.country || 'South Africa'}`,
-      '',
-      `Service option: ${data.service}`,
-      'Setup fee: R250',
-      'Router: Free-to-use',
-      '',
-      data.additional ? `Additional info: ${data.additional}` : null
-    ].filter(Boolean);
-
-    const subject = encodeURIComponent('BayWave Fibre Sign-Up');
-    const body = encodeURIComponent(lines.join('
-'));
-
-    // Open user's email client with prefilled message
-    window.location.href = `mailto:info@baywave.co.za?subject=${subject}&body=${body}`;
   });
-}
+
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Smooth scrolling for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  // ====== Provider pricing accordions (only one open at a time) ======
+  const providerDetails = document.querySelectorAll('details.provider');
+  providerDetails.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (!d.open) return;
+      providerDetails.forEach(other => { if (other !== d) other.removeAttribute('open'); });
+    });
+  });
+
+  // ====== Signup form (mailto submit) ======
+  const signupForm = document.getElementById('signupForm');
+  if (signupForm){
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!signupForm.checkValidity()){
+        signupForm.reportValidity();
+        return;
+      }
+
+      const fd = new FormData(signupForm);
+      const data = Object.fromEntries(fd.entries());
+
+      const lines = [
+        'FIBRE SIGN-UP REQUEST',
+        '=====================',
+        '',
+        `Name: ${data.firstName} ${data.lastName}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone}`,
+        `Alt Phone: ${data.altPhone}`,
+        data.company ? `Company: ${data.company}` : null,
+        data.complexNumber ? `Complex/Apt No: ${data.complexNumber}` : null,
+        data.complexName ? `Complex/Apt Name: ${data.complexName}` : null,
+        '',
+        'Address:',
+        `  ${data.streetNumber} ${data.streetName}`,
+        `  ${data.suburb}`,
+        `  ${data.city}`,
+        `  ${data.postalCode}`,
+        `  ${data.province}`,
+        `  ${data.country || 'South Africa'}`,
+        '',
+        `Service option: ${data.service}`,
+        'Setup fee: R250',
+        'Router: Free-to-use',
+        '',
+        data.additional ? `Additional info: ${data.additional}` : null
+      ].filter(Boolean);
+
+      const subject = encodeURIComponent('BayWave Fibre Sign-Up');
+      const body = encodeURIComponent(lines.join('\n')); // ✅ FIXED (this was breaking your script)
+
+      window.location.href = `mailto:info@baywave.co.za?subject=${subject}&body=${body}`;
+    });
+  }
 </script>
 </body>
 </html>
