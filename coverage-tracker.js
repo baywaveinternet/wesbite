@@ -1,6 +1,6 @@
 (function () {
   const DATA_URL = "coverage-data.json";
-  const GOOGLE_MAPS_API_KEY = "PASTE_YOUR_RESTRICTED_GOOGLE_MAPS_KEY_HERE";
+  const GOOGLE_MAPS_API_KEY = "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs;
 
   const addressInput = document.getElementById("address");
   const checkBtn = document.getElementById("checkBtn");
