@@ -1,9 +1,6 @@
+
 (function () {
   const DATA_URL = "coverage-data.json";
-
-  // ============================
-  // PLACE YOUR API KEY 
-  // ============================
   const GOOGLE_MAPS_API_KEY = "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs";
 
   const addressInput = document.getElementById("address");
@@ -16,6 +13,12 @@
   let marker = null;
   let geocoder = null;
 
+  function setStatus(html) {
+    if (coverageStatus) {
+      coverageStatus.innerHTML = html;
+    }
+  }
+
   function normalize(v) {
     return String(v || "")
       .toLowerCase()
@@ -26,7 +29,12 @@
 
   async function loadCoverage() {
     if (coverageData) return coverageData;
+
     const r = await fetch(DATA_URL);
+    if (!r.ok) {
+      throw new Error("Failed to load " + DATA_URL + " (" + r.status + ")");
+    }
+
     coverageData = await r.json();
     return coverageData;
   }
@@ -85,14 +93,14 @@
       "Coverage checker is a guide only and may not be 100% accurate. Final coverage will be confirmed during sign-up.";
 
     if (!area) {
-      coverageStatus.innerHTML =
-        `⚠️ Coverage not found for <strong>${formattedAddress}</strong>.<br><em>${disclaimer}</em>`;
+      setStatus(
+        `⚠️ Coverage not found for <strong>${formattedAddress}</strong>.<br><em>${disclaimer}</em>`
+      );
       return;
     }
 
     if (!area.fibreAvailable) {
-      coverageStatus.innerHTML =
-        `⚠️ Fibre not available in this area yet.<br><em>${disclaimer}</em>`;
+      setStatus(`⚠️ Fibre not available in this area yet.<br><em>${disclaimer}</em>`);
       return;
     }
 
@@ -100,15 +108,19 @@
     const providerData = data.providers ? data.providers[provider] : null;
     const packages = renderPackages(providerData);
 
-    coverageStatus.innerHTML =
+    setStatus(
       `✅ Fibre available at <strong>${formattedAddress}</strong><br>` +
       `Provider: <strong>${provider}</strong><br>` +
       packages +
-      `<em>${disclaimer}</em>`;
+      `<em>${disclaimer}</em>`
+    );
   }
 
   function createMap() {
-    if (!mapElement) return;
+    if (!mapElement || !window.google || !google.maps) {
+      setStatus("Map failed to load. Check your Google API key.");
+      return;
+    }
 
     const durban = { lat: -29.8587, lng: 31.0218 };
 
@@ -138,19 +150,19 @@
   }
 
   async function checkCoverage() {
-    const address = (addressInput.value || "").trim();
+    const address = (addressInput?.value || "").trim();
 
     if (!address) {
-      coverageStatus.innerHTML = "Please enter your address.";
+      setStatus("Please enter your address.");
       return;
     }
 
     if (!geocoder) {
-      coverageStatus.innerHTML = "Map failed to load. Check your Google API key.";
+      setStatus("Map failed to load. Check your Google API key.");
       return;
     }
 
-    coverageStatus.innerHTML = "Checking coverage...";
+    setStatus("Checking coverage...");
 
     try {
       const data = await loadCoverage();
@@ -162,7 +174,7 @@
         },
         function (results, status) {
           if (status !== "OK" || !results || !results[0]) {
-            coverageStatus.innerHTML = "Address not found. Please try a full address.";
+            setStatus("Address not found. Please try a full address.");
             return;
           }
 
@@ -177,22 +189,28 @@
       );
     } catch (error) {
       console.error(error);
-      coverageStatus.innerHTML = "Could not load coverage data.";
+      setStatus("Could not load coverage data.");
     }
   }
 
   function loadGoogleMaps() {
+    if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "MyAPIKey") {
+      setStatus("Please add your real Google Maps API key.");
+      return;
+    }
+
     const script = document.createElement("script");
-    script.src =
-      "https://maps.googleapis.com/maps/api/js?key=" +
-      GOOGLE_MAPS_API_KEY;
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY;
     script.async = true;
     script.defer = true;
     script.onload = createMap;
+    script.onerror = function () {
+      setStatus("Google Maps failed to load.");
+    };
     document.head.appendChild(script);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initCoverageChecker() {
     loadGoogleMaps();
 
     if (checkBtn) {
@@ -207,5 +225,11 @@
         }
       });
     }
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCoverageChecker);
+  } else {
+    initCoverageChecker();
+  }
 })();
