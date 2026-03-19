@@ -11,7 +11,7 @@ let marker;
 let geocoder;
 
 function loadGoogleMaps() {
-  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "PLACE YOUR API KEY HERE") {
+  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs") {
     document.getElementById("coverageStatus").innerHTML = "Add your Google API key.";
     return;
   }
@@ -47,10 +47,9 @@ function initMap() {
   });
 
   marker = new google.maps.marker.AdvancedMarkerElement({
-    map: map,
-    position: durban,
-    title: "Durban"
-  });
+  map: map,
+  position: durban
+});
 
   geocoder = new google.maps.Geocoder();
 
