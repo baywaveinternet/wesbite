@@ -1,4 +1,3 @@
-
 // ============================
 // BAYWAVE COVERAGE TRACKER
 // ============================
@@ -11,7 +10,7 @@ let marker;
 let geocoder;
 
 function loadGoogleMaps() {
-  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs")
+  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "PLACE YOUR API KEY HERE") {
     document.getElementById("coverageStatus").innerHTML = "Add your Google API key.";
     return;
   }
@@ -47,9 +46,9 @@ function initMap() {
   });
 
   marker = new google.maps.marker.AdvancedMarkerElement({
-  map: map,
-  position: durban
-});
+    map: map,
+    position: durban
+  });
 
   geocoder = new google.maps.Geocoder();
 
