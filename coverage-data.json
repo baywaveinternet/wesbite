@@ -379,7 +379,7 @@
     {
       "suburb": "Lamontville",
       "postcode": "4026",
-      "fibreAvailable": True,
+      "fibreAvailable": true,
       "fno": "Vuma"
     },
     {
@@ -851,36 +851,6 @@
       "fno": "Vuma"
     },
     {
-      "suburb": "Waterfall",
-      "postcode": "3652",
-      "fibreAvailable": false,
-      "fno": null
-    },
-    {
-      "suburb": "Ballito",
-      "postcode": "4420",
-      "fibreAvailable": false,
-      "fno": null
-    },
-    {
-      "suburb": "Kingsburgh",
-      "postcode": "4126",
-      "fibreAvailable": false,
-      "fno": null
-    },
-    {
-      "suburb": "Warner Beach",
-      "postcode": "4126",
-      "fibreAvailable": false,
-      "fno": null
-    },
-    {
-      "suburb": "Amanzimtoti",
-      "postcode": "4126",
-      "fibreAvailable": false,
-      "fno": null
-    },
-    {
       "suburb": "Doonside",
       "postcode": "4126",
       "fibreAvailable": false,
@@ -926,67 +896,66 @@
       "suburb": "Umhlanga Ridge",
       "postcode": "4319",
       "fibreAvailable": true,
-      "fno": "Openserve:
+      "fno": "Openserve"
     },
     {
       "suburb": "Umhlanga Rocks",
       "postcode": "4319",
       "fibreAvailable": true,
       "fno": "Openserve"
-     
     },
- {
-    "suburb": "Prestondale",
-    "postcode": "4319",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Somerset Park",
-    "postcode": "4319",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Sunningdale",
-    "postcode": "4051",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Virginia",
-    "postcode": "4051",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Glen Hills",
-    "postcode": "4051",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Durban Point",
-    "postcode": "4001",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  },
-  {
-    "suburb": "Point Waterfront",
-    "postcode": "4001",
-    "fibreAvailable": true,
-    "fno": "Openserve"
-  }
+    {
+      "suburb": "Prestondale",
+      "postcode": "4319",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Somerset Park",
+      "postcode": "4319",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Sunningdale",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Virginia",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Glen Hills",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Durban Point",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Point Waterfront",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
     {
       "suburb": "Windermere",
       "postcode": "4001",
-     "fibreAvailable": true,
+      "fibreAvailable": true,
       "fno": "Openserve"
     },
     {
       "suburb": "Morningside Manor",
       "postcode": "4001",
- "fibreAvailable": true,
+      "fibreAvailable": true,
       "fno": "Openserve"
     }
   ]
