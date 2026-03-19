@@ -1,7 +1,7 @@
-
 (function () {
   const DATA_URL = "coverage-data.json";
   const GOOGLE_MAPS_API_KEY = "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs";
+  const GOOGLE_MAP_ID = "DEMO_MAP_ID";
 
   const addressInput = document.getElementById("address");
   const checkBtn = document.getElementById("checkBtn");
@@ -116,7 +116,7 @@
     );
   }
 
-  function createMap() {
+  async function createMap() {
     if (!mapElement || !window.google || !google.maps) {
       setStatus("Map failed to load. Check your Google API key.");
       return;
@@ -129,12 +129,15 @@
       zoom: 11,
       mapTypeControl: false,
       streetViewControl: false,
-      fullscreenControl: true
+      fullscreenControl: true,
+      mapId: GOOGLE_MAP_ID
     });
 
-    marker = new google.maps.Marker({
-      position: durban,
+    const markerLibrary = await google.maps.importLibrary("marker");
+
+    marker = new markerLibrary.AdvancedMarkerElement({
       map: map,
+      position: durban,
       title: "Durban"
     });
 
@@ -145,8 +148,8 @@
     if (!map || !marker) return;
     map.setCenter(location);
     map.setZoom(17);
-    marker.setPosition(location);
-    marker.setTitle(title || "Selected address");
+    marker.position = location;
+    marker.title = title || "Selected address";
   }
 
   async function checkCoverage() {
@@ -199,8 +202,20 @@
       return;
     }
 
+    if (window.google && window.google.maps) {
+      createMap();
+      return;
+    }
+
+    const existingScript = document.getElementById("google-maps-script");
+    if (existingScript) return;
+
     const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY;
+    script.id = "google-maps-script";
+    script.src =
+      "https://maps.googleapis.com/maps/api/js?key=" +
+      encodeURIComponent(GOOGLE_MAPS_API_KEY) +
+      "&loading=async&libraries=marker";
     script.async = true;
     script.defer = true;
     script.onload = createMap;
