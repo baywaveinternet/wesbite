@@ -11,7 +11,7 @@ let marker;
 let geocoder;
 
 function loadGoogleMaps() {
-  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs") {
+  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs")
     document.getElementById("coverageStatus").innerHTML = "Add your Google API key.";
     return;
   }
