@@ -1,0 +1,993 @@
+{
+  "meta": {
+    "business": "BayWave Internet",
+    "region": "Durban, South Africa",
+    "disclaimer": "Coverage checker is a guide only and may not be 100% accurate. Final fibre availability will always be confirmed during sign-up.",
+    "lookupPriority": [
+      "postcode+suburb",
+      "postcode",
+      "suburb"
+    ]
+  },
+  "providers": {
+    "Vuma": {
+      "slug": "vuma",
+      "packages": [
+        {
+          "speedMbps": 30,
+          "price": 499
+        },
+        {
+          "speedMbps": 50,
+          "price": 749
+        },
+        {
+          "speedMbps": 100,
+          "price": 899
+        },
+        {
+          "speedMbps": 200,
+          "price": 1189
+        },
+        {
+          "speedMbps": 500,
+          "price": 1269
+        },
+        {
+          "speedMbps": 1000,
+          "price": 1499
+        }
+      ]
+    },
+    "Openserve": {
+      "slug": "openserve",
+      "packages": [
+        {
+          "speedMbps": 30,
+          "price": 549
+        },
+        {
+          "speedMbps": 50,
+          "price": 749
+        },
+        {
+          "speedMbps": 100,
+          "price": 899
+        },
+        {
+          "speedMbps": 200,
+          "price": 1185
+        },
+        {
+          "speedMbps": 300,
+          "price": 1269
+        },
+        {
+          "speedMbps": 500,
+          "price": 1419
+        }
+      ]
+    },
+    "Metrofibre": {
+      "slug": "metrofibre",
+      "packages": [
+        {
+          "speedMbps": 25,
+          "price": 599
+        },
+        {
+          "speedMbps": 45,
+          "price": 849
+        },
+        {
+          "speedMbps": 75,
+          "price": 949
+        },
+        {
+          "speedMbps": 150,
+          "price": 999
+        },
+        {
+          "speedMbps": 250,
+          "price": 1100
+        },
+        {
+          "speedMbps": 500,
+          "price": 1285
+        },
+        {
+          "speedMbps": 1000,
+          "price": 1475
+        }
+      ]
+    },
+    "Octotel": {
+      "slug": "octotel",
+      "packages": [
+        {
+          "speedMbps": 25,
+          "price": 549
+        },
+        {
+          "speedMbps": 55,
+          "price": 569
+        },
+        {
+          "speedMbps": 100,
+          "price": 720
+        },
+        {
+          "speedMbps": 150,
+          "price": 799
+        },
+        {
+          "speedMbps": 300,
+          "price": 899
+        },
+        {
+          "speedMbps": 500,
+          "price": 1230
+        },
+        {
+          "speedMbps": 1000,
+          "price": 1475
+        }
+      ]
+    }
+  },
+  "areas": [
+    {
+      "suburb": "Addington",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Asherville",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Athena Gardens",
+      "postcode": "4037",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Austerville",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Avoca",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Avondale",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Bayhead",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Beach",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Bellair",
+      "postcode": "4094",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Berea",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Bluff",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Brighton Beach",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Briardene",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Brookdale",
+      "postcode": "4068",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Carrington Heights",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Cato Manor",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Clairwood",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Clare Estate",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Congella",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Crossmoor",
+      "postcode": "4092",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Dalbridge",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Durban Central",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Durban North",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Effingham",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Escombe",
+      "postcode": "4093",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Everton",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Forest Hills",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Glen Anil",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Glenashley",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Glenwood",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Greenwood Park",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Greyville",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Hillcrest",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Hillary",
+      "postcode": "4094",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Isipingo",
+      "postcode": "4110",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Isipingo Beach",
+      "postcode": "4115",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Jacobs",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Kenville",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Kloof",
+      "postcode": "3640",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "La Lucia",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Lamontville",
+      "postcode": "4026",
+      "fibreAvailable": True,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Malvern",
+      "postcode": "4093",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Mayville",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Merebank",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Merewent",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Mobeni",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Montclair",
+      "postcode": "4004",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Morningside",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Mount Edgecombe",
+      "postcode": "4302",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Mount Vernon",
+      "postcode": "4094",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Musgrave",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "New Germany",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Newlands East",
+      "postcode": "4037",
+      "fibreAvailable": true,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Newlands West",
+      "postcode": "4037",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "North Beach",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Northdene",
+      "postcode": "4093",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Ocean View",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Overport",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Palmiet",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Park Hill",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Phoenix",
+      "postcode": "4068",
+      "fibreAvailable": true,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Pinetown",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Prospecton",
+      "postcode": "4110",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Queensburgh",
+      "postcode": "4093",
+      "fibreAvailable": true,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Red Hill",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Reservoir Hills",
+      "postcode": "4090",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Rossburgh",
+      "postcode": "4094",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Sarnia",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Sea Cow Lake",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Sea View",
+      "postcode": "4094",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Sherwood",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "South Beach",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Springfield",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Stamford Hill",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Sydenham",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Tongaat",
+      "postcode": "4400",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Umbilo",
+      "postcode": "4001",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Umdloti",
+      "postcode": "4350",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Umgeni Park",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Umhlanga",
+      "postcode": "4319",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Umlazi",
+      "postcode": "4031",
+      "fibreAvailable": true,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Verulam",
+      "postcode": "4340",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Westville",
+      "postcode": "3629",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Westridge",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Wentworth",
+      "postcode": "4052",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Woodhaven",
+      "postcode": "4004",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Woodlands",
+      "postcode": "4004",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Yellowwood Park",
+      "postcode": "4004",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Botha's Hill",
+      "postcode": "3660",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Cowies Hill",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Drummond",
+      "postcode": "3626",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Gillitts",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Winston Park",
+      "postcode": "3610",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Waterfall",
+      "postcode": "3652",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Ballito",
+      "postcode": "4420",
+      "fibreAvailable": true,
+      "fno": "Metrofibre"
+    },
+    {
+      "suburb": "Kingsburgh",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Warner Beach",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Amanzimtoti",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Padfield Park",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": "Frogfoot"
+    },
+    {
+      "suburb": "Manors",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Riverhorse Valley",
+      "postcode": "4017",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Riverhorse Valley East",
+      "postcode": "4017",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Rochdale Park",
+      "postcode": "4034",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Rosehill",
+      "postcode": "4051",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Roseglen",
+      "postcode": "4091",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Sea Cow Lake Industrial",
+      "postcode": "4051",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Springfield Park",
+      "postcode": "4051",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Springfield Industrial",
+      "postcode": "4051",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Avoca Hills",
+      "postcode": "4051",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Bonela",
+      "postcode": "4091",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Carrington Park",
+      "postcode": "4001",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Clifton Hill Estate",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Cowies Hill Park",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Everton Gardens",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Forest View",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Hilltop",
+      "postcode": "3610",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Inchanga",
+      "postcode": "3650",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Molweni",
+      "postcode": "3650",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Mpumalanga",
+      "postcode": "3699",
+      "fibreAvailable": true,
+      "fno": "Vuma"
+    },
+    {
+      "suburb": "Waterfall",
+      "postcode": "3652",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Ballito",
+      "postcode": "4420",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Kingsburgh",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Warner Beach",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Amanzimtoti",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Doonside",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Winklespruit",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Illovo Beach",
+      "postcode": "4126",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "La Mercy",
+      "postcode": "4405",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Ottawa",
+      "postcode": "4342",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Mount Moreland",
+      "postcode": "4340",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Cornubia",
+      "postcode": "4319",
+      "fibreAvailable": false,
+      "fno": null
+    },
+    {
+      "suburb": "Umhlanga Ridge",
+      "postcode": "4319",
+      "fibreAvailable": true,
+      "fno": "Openserve:
+    },
+    {
+      "suburb": "Umhlanga Rocks",
+      "postcode": "4319",
+      "fibreAvailable": true,
+      "fno": "Openserve"
+     
+    },
+ {
+    "suburb": "Prestondale",
+    "postcode": "4319",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Somerset Park",
+    "postcode": "4319",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Sunningdale",
+    "postcode": "4051",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Virginia",
+    "postcode": "4051",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Glen Hills",
+    "postcode": "4051",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Durban Point",
+    "postcode": "4001",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  },
+  {
+    "suburb": "Point Waterfront",
+    "postcode": "4001",
+    "fibreAvailable": true,
+    "fno": "Openserve"
+  }
+    {
+      "suburb": "Windermere",
+      "postcode": "4001",
+     "fibreAvailable": true,
+      "fno": "Openserve"
+    },
+    {
+      "suburb": "Morningside Manor",
+      "postcode": "4001",
+ "fibreAvailable": true,
+      "fno": "Openserve"
+    }
+  ]
+}
