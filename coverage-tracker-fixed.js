@@ -30,7 +30,7 @@
     if (mapsLoadPromise) return mapsLoadPromise;
 
     const apiKey = getApiKey();
-    if (!apiKey || apiKey === 'YOUR_GOOGLE_MAPS_API_KEY') {
+    if (!apiKey || apiKey === ''AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs' {
       return Promise.reject(new Error('Missing Google Maps API key'));
     }
 
