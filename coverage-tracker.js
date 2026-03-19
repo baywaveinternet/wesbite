@@ -2,7 +2,7 @@
   const DATA_URL = "coverage-data.json";
 
   // ============================
-  // PLACE YOUR API KEY HERE
+  // PLACE YOUR API KEY 
   // ============================
   const GOOGLE_MAPS_API_KEY = "AIzaSyDgTEGTV1gIXU9fg_F2FksafaQlWuiwYIs";
 
