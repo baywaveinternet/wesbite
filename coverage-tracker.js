@@ -16,7 +16,7 @@
   let marker = null;
   let geocoder = null;
   let autocomplete = null;
-  let mapsLoaded = false;
+  let infoWindow = null;
 
   function injectStyles() {
     if (document.getElementById("baywave-coverage-styles")) return;
@@ -239,6 +239,61 @@
         animation: bwLoading 1.2s infinite ease-in-out;
       }
 
+      .bw-map-popup {
+        font-family: Arial, sans-serif;
+        min-width: 220px;
+        max-width: 280px;
+        padding: 4px 2px 2px;
+      }
+
+      .bw-map-popup-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .bw-map-popup-success .bw-map-popup-badge {
+        background: #e8fff3;
+        color: #087443;
+      }
+
+      .bw-map-popup-warning .bw-map-popup-badge {
+        background: #fff6df;
+        color: #a16207;
+      }
+
+      .bw-map-popup-error .bw-map-popup-badge {
+        background: #ffe9e9;
+        color: #b42318;
+      }
+
+      .bw-map-popup-title {
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 800;
+        color: #16324a;
+        line-height: 1.25;
+      }
+
+      .bw-map-popup-text {
+        margin: 0;
+        font-size: 13px;
+        color: #536b80;
+        line-height: 1.5;
+      }
+
+      .bw-map-popup-provider {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #0f766e;
+      }
+
       @keyframes bwFadeUp {
         from {
           opacity: 0;
@@ -333,6 +388,15 @@
       .trim();
   }
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   async function loadCoverage() {
     if (coverageData) return coverageData;
 
@@ -419,15 +483,6 @@
     return match || null;
   }
 
-  function escapeHtml(value) {
-    return String(value || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
   function renderPackages(providerData) {
     if (!providerData || !providerData.packages || !providerData.packages.length) {
       return "";
@@ -477,9 +532,7 @@
             '<p class="bw-subtitle">' + escapeHtml(subtitle) + '</p>' +
           "</div>" +
         "</div>" +
-        (disclaimer
-          ? '<div class="bw-disclaimer">' + escapeHtml(disclaimer) + "</div>"
-          : "") +
+        (disclaimer ? '<div class="bw-disclaimer">' + escapeHtml(disclaimer) + "</div>" : "") +
       "</div>"
     );
   }
@@ -495,7 +548,7 @@
           "</div>" +
         "</div>" +
         (detailBoxes || "") +
-        '<div class="bw-disclaimer">' + escapeHtml(disclaimer) + "</div>" +
+        '<div class="bw-disclaimer">' + escapeHtml(disclaimer || "") + "</div>" +
       "</div>"
     );
   }
@@ -509,7 +562,7 @@
             '<h3 class="bw-title">Great news — Fibre is available</h3>' +
             '<p class="bw-subtitle">We found coverage for your address and matching packages are ready to view.</p>' +
           "</div>" +
-        "</div>" +
+        "</div>' +
 
         '<div class="bw-details">' +
           '<div class="bw-detail-box">' +
@@ -537,7 +590,52 @@
     );
   }
 
-  function showResult(area, data, formattedAddress, loc) {
+  function showMapPopup(type, title, text, provider, location) {
+    if (!map || !location || !window.google || !google.maps) return;
+
+    if (!infoWindow) {
+      infoWindow = new google.maps.InfoWindow();
+    }
+
+    const popupClass =
+      type === "success"
+        ? "bw-map-popup-success"
+        : type === "warning"
+        ? "bw-map-popup-warning"
+        : "bw-map-popup-error";
+
+    const badgeText =
+      type === "success"
+        ? "✓ Coverage Found"
+        : type === "warning"
+        ? "! Limited Result"
+        : "✕ Not Found";
+
+    const content =
+      '<div class="bw-map-popup ' + popupClass + '">' +
+        '<div class="bw-map-popup-badge">' + escapeHtml(badgeText) + "</div>" +
+        '<div class="bw-map-popup-title">' + escapeHtml(title) + "</div>" +
+        '<p class="bw-map-popup-text">' + escapeHtml(text) + "</p>" +
+        (provider
+          ? '<div class="bw-map-popup-provider">Provider: ' + escapeHtml(provider) + "</div>"
+          : "") +
+      "</div>";
+
+    infoWindow.setContent(content);
+    infoWindow.setPosition(location);
+    infoWindow.open({
+      map: map,
+      anchor: marker
+    });
+  }
+
+  function clearMapPopup() {
+    if (infoWindow) {
+      infoWindow.close();
+    }
+  }
+
+  function showResult(area, data, formattedAddress, loc, location) {
     const disclaimer =
       (data.meta && data.meta.disclaimer) ||
       "Coverage checker is a guide only and may not be 100% accurate. Final coverage will be confirmed during sign-up.";
@@ -556,7 +654,7 @@
           '<div class="bw-detail-box">' +
             '<span class="bw-label">Address Entered</span>' +
             '<div class="bw-value">' + escapeHtml(formattedAddress || "Unknown") + "</div>" +
-          "</div>" +
+          "</div>' +
         "</div>";
 
       setStatus(
@@ -566,6 +664,14 @@
           detailBoxes,
           disclaimer
         )
+      );
+
+      showMapPopup(
+        "error",
+        "Coverage not found",
+        "We could not confirm fibre coverage for this address yet.",
+        "",
+        location
       );
       return;
     }
@@ -590,6 +696,14 @@
           disclaimer
         )
       );
+
+      showMapPopup(
+        "warning",
+        "Area found",
+        "This address matched an area, but fibre is not available there yet.",
+        area.fno || "",
+        location
+      );
       return;
     }
 
@@ -605,6 +719,14 @@
         packages,
         disclaimer
       )
+    );
+
+    showMapPopup(
+      "success",
+      "Fibre is available here",
+      "Good news — this address has fibre coverage.",
+      provider || "Not specified",
+      location
     );
   }
 
@@ -627,6 +749,8 @@
       title: "Durban"
     });
 
+    infoWindow = new google.maps.InfoWindow();
+
     geocoder = new google.maps.Geocoder();
 
     if (addressInput && google.maps.places) {
@@ -644,10 +768,9 @@
         }
 
         moveMap(place.geometry.location, place.formatted_address || place.name);
+        clearMapPopup();
       });
     }
-
-    mapsLoaded = true;
   }
 
   function moveMap(location, title) {
@@ -660,6 +783,8 @@
 
   async function checkCoverage() {
     const address = (addressInput && addressInput.value ? addressInput.value : "").trim();
+
+    clearMapPopup();
 
     if (!address) {
       setStatus(
@@ -713,7 +838,7 @@
           const area = findMatch(data, loc.suburb, loc.postcode, loc.city);
 
           moveMap(location, result.formatted_address);
-          showResult(area, data, result.formatted_address, loc);
+          showResult(area, data, result.formatted_address, loc, location);
         }
       );
     } catch (error) {
