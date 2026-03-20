@@ -16,6 +16,7 @@
   let marker = null;
   let geocoder = null;
   let autocomplete = null;
+  let mapsLoaded = false;
   let infoWindow = null;
 
   function injectStyles() {
@@ -240,18 +241,18 @@
       }
 
       .bw-map-popup {
-        font-family: Arial, sans-serif;
-        min-width: 220px;
-        max-width: 280px;
-        padding: 4px 2px 2px;
+        min-width: 210px;
+        max-width: 260px;
+        padding: 6px 4px 4px;
+        animation: bwCloudIn 0.35s ease;
       }
 
       .bw-map-popup-badge {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
         border-radius: 999px;
-        padding: 7px 12px;
+        padding: 6px 12px;
         font-size: 12px;
         font-weight: 700;
         margin-bottom: 10px;
@@ -276,15 +277,15 @@
         margin: 0 0 6px;
         font-size: 16px;
         font-weight: 800;
-        color: #16324a;
         line-height: 1.25;
+        color: #16324a;
       }
 
       .bw-map-popup-text {
         margin: 0;
         font-size: 13px;
+        line-height: 1.45;
         color: #536b80;
-        line-height: 1.5;
       }
 
       .bw-map-popup-provider {
@@ -345,6 +346,17 @@
         }
       }
 
+      @keyframes bwCloudIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
       @media (max-width: 640px) {
         .bw-status-card {
           padding: 18px 16px 16px;
@@ -388,27 +400,18 @@
       .trim();
   }
 
-  function escapeHtml(value) {
-    return String(value || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
   async function loadCoverage() {
     if (coverageData) return coverageData;
 
-    const response = await fetch(DATA_URL, { cache: "no-store" });
+    const r = await fetch(DATA_URL, { cache: "no-store" });
 
-    if (!response.ok) {
-      throw new Error("Could not load coverage-data.json (" + response.status + ")");
+    if (!r.ok) {
+      throw new Error("Could not load coverage-data.json (" + r.status + ")");
     }
 
     let data;
     try {
-      data = await response.json();
+      data = await r.json();
     } catch (err) {
       throw new Error("coverage-data.json contains invalid JSON.");
     }
@@ -483,114 +486,132 @@
     return match || null;
   }
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   function renderPackages(providerData) {
     if (!providerData || !providerData.packages || !providerData.packages.length) {
       return "";
     }
 
-    return `
-      <div class="bw-package-wrap">
-        <div class="bw-package-title">Available Packages</div>
-        <ul class="bw-package-list">
-          ${providerData.packages
+    return (
+      '<div class="bw-package-wrap">' +
+        '<div class="bw-package-title">Available Packages</div>' +
+        '<ul class="bw-package-list">' +
+          providerData.packages
             .map(function (p, index) {
-              return `
-                <li class="bw-package-item" style="animation-delay:${0.18 + index * 0.08}s;">
-                  <span class="bw-package-speed">${escapeHtml(p.speedMbps)} Mbps</span>
-                  <span class="bw-package-price">R${escapeHtml(p.price)}</span>
-                </li>
-              `;
+              return (
+                '<li class="bw-package-item" style="animation-delay:' + (0.18 + index * 0.08) + 's;">' +
+                  '<span class="bw-package-speed">' + escapeHtml(p.speedMbps) + ' Mbps</span>' +
+                  '<span class="bw-package-price">R' + escapeHtml(p.price) + '</span>' +
+                '</li>'
+              );
             })
-            .join("")}
-        </ul>
-      </div>
-    `;
+            .join("") +
+        "</ul>" +
+      "</div>"
+    );
   }
 
   function renderLoadingCard(message) {
-    return `
-      <div class="bw-status-card bw-status-loading">
-        <div class="bw-top">
-          <div class="bw-icon">⌛</div>
-          <div class="bw-title-wrap">
-            <h3 class="bw-title">Checking coverage...</h3>
-            <p class="bw-subtitle">${escapeHtml(message || "Please wait while we verify your address.")}</p>
-          </div>
-        </div>
-        <div class="bw-loading-line"></div>
-      </div>
-    `;
+    return (
+      '<div class="bw-status-card bw-status-loading">' +
+        '<div class="bw-top">' +
+          '<div class="bw-icon">⌛</div>' +
+          '<div class="bw-title-wrap">' +
+            '<h3 class="bw-title">Checking coverage...</h3>' +
+            '<p class="bw-subtitle">' + escapeHtml(message || "Please wait while we verify your address.") + '</p>' +
+          "</div>" +
+        "</div>" +
+        '<div class="bw-loading-line"></div>' +
+      "</div>"
+    );
   }
 
   function renderErrorCard(title, subtitle, disclaimer) {
-    return `
-      <div class="bw-status-card bw-status-error">
-        <div class="bw-top">
-          <div class="bw-icon">✕</div>
-          <div class="bw-title-wrap">
-            <h3 class="bw-title">${escapeHtml(title)}</h3>
-            <p class="bw-subtitle">${escapeHtml(subtitle)}</p>
-          </div>
-        </div>
-        ${disclaimer ? `<div class="bw-disclaimer">${escapeHtml(disclaimer)}</div>` : ""}
-      </div>
-    `;
+    return (
+      '<div class="bw-status-card bw-status-error">' +
+        '<div class="bw-top">' +
+          '<div class="bw-icon">✕</div>' +
+          '<div class="bw-title-wrap">' +
+            '<h3 class="bw-title">' + escapeHtml(title) + '</h3>' +
+            '<p class="bw-subtitle">' + escapeHtml(subtitle) + '</p>' +
+          "</div>" +
+        "</div>" +
+        (disclaimer
+          ? '<div class="bw-disclaimer">' + escapeHtml(disclaimer) + '</div>'
+          : '') +
+      '</div>'
+    );
   }
 
   function renderWarningCard(title, subtitle, detailBoxes, disclaimer) {
-    return `
-      <div class="bw-status-card bw-status-warning">
-        <div class="bw-top">
-          <div class="bw-icon">!</div>
-          <div class="bw-title-wrap">
-            <h3 class="bw-title">${escapeHtml(title)}</h3>
-            <p class="bw-subtitle">${escapeHtml(subtitle)}</p>
-          </div>
-        </div>
-        ${detailBoxes || ""}
-        ${disclaimer ? `<div class="bw-disclaimer">${escapeHtml(disclaimer)}</div>` : ""}
-      </div>
-    `;
+    return (
+      '<div class="bw-status-card bw-status-warning">' +
+        '<div class="bw-top">' +
+          '<div class="bw-icon">!</div>' +
+          '<div class="bw-title-wrap">' +
+            '<h3 class="bw-title">' + escapeHtml(title) + '</h3>' +
+            '<p class="bw-subtitle">' + escapeHtml(subtitle) + '</p>' +
+          '</div>' +
+        '</div>' +
+        (detailBoxes || '') +
+        '<div class="bw-disclaimer">' + escapeHtml(disclaimer || '') + '</div>' +
+      '</div>'
+    );
   }
 
   function renderSuccessCard(address, area, provider, packagesHtml, disclaimer) {
-    return `
-      <div class="bw-status-card bw-status-success">
-        <div class="bw-top">
-          <div class="bw-icon">✓</div>
-          <div class="bw-title-wrap">
-            <h3 class="bw-title">Great news — Fibre is available</h3>
-            <p class="bw-subtitle">We found coverage for your address and matching packages are ready to view.</p>
-          </div>
-        </div>
+    return (
+      '<div class="bw-status-card bw-status-success">' +
+        '<div class="bw-top">' +
+          '<div class="bw-icon">✓</div>' +
+          '<div class="bw-title-wrap">' +
+            '<h3 class="bw-title">Great news — Fibre is available</h3>' +
+            '<p class="bw-subtitle">We found coverage for your address and matching packages are ready to view.</p>' +
+          '</div>' +
+        '</div>' +
 
-        <div class="bw-details">
-          <div class="bw-detail-box">
-            <span class="bw-label">Address</span>
-            <div class="bw-value">${escapeHtml(address)}</div>
-          </div>
+        '<div class="bw-details">' +
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Address</span>' +
+            '<div class="bw-value">' + escapeHtml(address) + '</div>' +
+          '</div>' +
 
-          <div class="bw-detail-box">
-            <span class="bw-label">Matched Area</span>
-            <div class="bw-value">
-              ${escapeHtml(area.suburb || "Unknown")}${area.postcode ? " (" + escapeHtml(area.postcode) + ")" : ""}
-            </div>
-          </div>
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Matched Area</span>' +
+            '<div class="bw-value">' +
+              escapeHtml(area.suburb || "Unknown") +
+              (area.postcode ? ' (' + escapeHtml(area.postcode) + ')' : '') +
+            '</div>' +
+          '</div>' +
 
-          <div class="bw-detail-box">
-            <span class="bw-label">Provider</span>
-            <div class="bw-value">${escapeHtml(provider || "Not specified")}</div>
-          </div>
-        </div>
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Provider</span>' +
+            '<div class="bw-value">' + escapeHtml(provider || "Not specified") + '</div>' +
+          '</div>' +
+        '</div>' +
 
-        ${packagesHtml}
-        <div class="bw-disclaimer">${escapeHtml(disclaimer)}</div>
-      </div>
-    `;
+        packagesHtml +
+        '<div class="bw-disclaimer">' + escapeHtml(disclaimer) + '</div>' +
+      '</div>'
+    );
   }
 
-  function showMapPopup(type, title, text, provider, location) {
-    if (!map || !location || !window.google || !google.maps) return;
+  function clearMapPopup() {
+    if (infoWindow) {
+      infoWindow.close();
+    }
+  }
+
+  function showMapPopup(type, title, message, provider, location) {
+    if (!map || !window.google || !google.maps || !location) return;
 
     if (!infoWindow) {
       infoWindow = new google.maps.InfoWindow();
@@ -603,34 +624,29 @@
         ? "bw-map-popup-warning"
         : "bw-map-popup-error";
 
-    const badgeText =
+    const badge =
       type === "success"
         ? "✓ Coverage Found"
         : type === "warning"
-        ? "! Limited Result"
+        ? "! Area Found"
         : "✕ Not Found";
 
-    const content = `
-      <div class="bw-map-popup ${popupClass}">
-        <div class="bw-map-popup-badge">${escapeHtml(badgeText)}</div>
-        <div class="bw-map-popup-title">${escapeHtml(title)}</div>
-        <p class="bw-map-popup-text">${escapeHtml(text)}</p>
-        ${provider ? `<div class="bw-map-popup-provider">Provider: ${escapeHtml(provider)}</div>` : ""}
-      </div>
-    `;
+    const html =
+      '<div class="bw-map-popup ' + popupClass + '">' +
+        '<div class="bw-map-popup-badge">' + escapeHtml(badge) + '</div>' +
+        '<div class="bw-map-popup-title">' + escapeHtml(title) + '</div>' +
+        '<p class="bw-map-popup-text">' + escapeHtml(message) + '</p>' +
+        (provider
+          ? '<div class="bw-map-popup-provider">Provider: ' + escapeHtml(provider) + '</div>'
+          : '') +
+      '</div>';
 
-    infoWindow.setContent(content);
+    infoWindow.setContent(html);
     infoWindow.setPosition(location);
     infoWindow.open({
       map: map,
       anchor: marker
     });
-  }
-
-  function clearMapPopup() {
-    if (infoWindow) {
-      infoWindow.close();
-    }
   }
 
   function showResult(area, data, formattedAddress, loc, location) {
@@ -639,22 +655,21 @@
       "Coverage checker is a guide only and may not be 100% accurate. Final coverage will be confirmed during sign-up.";
 
     if (!area) {
-      const detailBoxes = `
-        <div class="bw-details">
-          <div class="bw-detail-box">
-            <span class="bw-label">Detected Suburb</span>
-            <div class="bw-value">${escapeHtml(loc.suburb || "Unknown")}</div>
-          </div>
-          <div class="bw-detail-box">
-            <span class="bw-label">Detected Postcode</span>
-            <div class="bw-value">${escapeHtml(loc.postcode || "Unknown")}</div>
-          </div>
-          <div class="bw-detail-box">
-            <span class="bw-label">Address Entered</span>
-            <div class="bw-value">${escapeHtml(formattedAddress || "Unknown")}</div>
-          </div>
-        </div>
-      `;
+      const detailBoxes =
+        '<div class="bw-details">' +
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Detected Suburb</span>' +
+            '<div class="bw-value">' + escapeHtml(loc.suburb || "Unknown") + '</div>' +
+          '</div>' +
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Detected Postcode</span>' +
+            '<div class="bw-value">' + escapeHtml(loc.postcode || "Unknown") + '</div>' +
+          '</div>' +
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Address Entered</span>' +
+            '<div class="bw-value">' + escapeHtml(formattedAddress || "Unknown") + '</div>' +
+          '</div>' +
+        '</div>';
 
       setStatus(
         renderWarningCard(
@@ -676,16 +691,16 @@
     }
 
     if (!area.fibreAvailable) {
-      const detailBoxes = `
-        <div class="bw-details">
-          <div class="bw-detail-box">
-            <span class="bw-label">Matched Area</span>
-            <div class="bw-value">
-              ${escapeHtml(area.suburb || "Unknown")}${area.postcode ? " (" + escapeHtml(area.postcode) + ")" : ""}
-            </div>
-          </div>
-        </div>
-      `;
+      const detailBoxes =
+        '<div class="bw-details">' +
+          '<div class="bw-detail-box">' +
+            '<span class="bw-label">Matched Area</span>' +
+            '<div class="bw-value">' +
+              escapeHtml(area.suburb || "Unknown") +
+              (area.postcode ? ' (' + escapeHtml(area.postcode) + ')' : '') +
+            '</div>' +
+          '</div>' +
+        '</div>';
 
       setStatus(
         renderWarningCard(
@@ -769,6 +784,8 @@
         clearMapPopup();
       });
     }
+
+    mapsLoaded = true;
   }
 
   function moveMap(location, title) {
