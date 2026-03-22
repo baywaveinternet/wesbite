@@ -13,6 +13,10 @@
     "Vuma": {
       "slug": "vuma",
       "packages": [
+           {
+          "speedMbps": 20,
+          "price": 429
+        },
         {
           "speedMbps": 30,
           "price": 499
