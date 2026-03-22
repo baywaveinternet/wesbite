@@ -21,6 +21,10 @@
           "speedMbps": 30,
           "price": 499
         },
+          {
+          "speedMbps": 40,
+          "price": 599
+        },
         {
           "speedMbps": 50,
           "price": 749
