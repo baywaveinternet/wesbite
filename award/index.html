@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#083252">
+  <title>Awards RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--deep:#083252;--blue:#0b4a7a;--aqua:#20c7c6;--sun:#ff8a3d;--ink:#102b3d;--muted:#627789;--line:#dce8ef}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 0%,#dff9f7 0,transparent 34%),radial-gradient(circle at 95% 10%,#e4efff 0,transparent 32%),#f7fbff;padding:32px 16px}
+    .wrap{width:min(720px,100%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}.brand{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}.tag{font-size:11px;color:var(--blue);background:#e6f8f7;border:1px solid #c9efec;padding:7px 11px;border-radius:30px}
+    .hero{padding:30px 0 22px}.eyebrow{color:#078e99;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(34px,7vw,54px);line-height:1.08;letter-spacing:-.05em;color:var(--deep);margin:10px 0 12px}.hero p{color:var(--muted);margin:0;max-width:56ch;font-size:14px}
+    .panel{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 22px 60px rgba(8,50,82,.09)}
+    .progress{height:5px;background:#eaf1f5;border-radius:9px;overflow:hidden;margin-bottom:25px}.progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--blue),var(--aqua))}
+    .section-title{font-size:17px;color:var(--deep);margin:0 0 5px}.hint{font-size:12px;color:var(--muted);margin:0 0 22px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px}.wide{grid-column:1/-1}label,.legend{font-size:12px;font-weight:600;color:#28465b}input,select,textarea{width:100%;border:1px solid #d6e2e9;border-radius:12px;padding:13px 14px;font:inherit;font-size:13px;color:var(--ink);background:#fff;outline:none;transition:.2s}input:focus,select:focus,textarea:focus{border-color:var(--aqua);box-shadow:0 0 0 3px #20c7c622}textarea{min-height:92px;resize:vertical}.choices{display:flex;gap:10px;flex-wrap:wrap}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:inline-flex;align-items:center;padding:11px 15px;border:1px solid #d6e2e9;border-radius:12px;font-size:12px;cursor:pointer;background:#fff}.choice input:checked+span{border-color:var(--aqua);background:#eafffd;color:var(--deep);box-shadow:inset 0 0 0 1px var(--aqua)}
+    .actions{display:flex;align-items:center;gap:14px;margin-top:25px;flex-wrap:wrap}.submit{border:0;border-radius:999px;padding:14px 22px;background:linear-gradient(120deg,var(--blue),#0c8d9b);color:white;font:600 13px Poppins;cursor:pointer;box-shadow:0 12px 25px #0b4a7a2b}.submit:hover{filter:brightness(1.06);transform:translateY(-1px)}.fine{font-size:11px;color:var(--muted);max-width:34ch}.status{display:none;margin-top:17px;padding:13px 15px;background:#fff5e9;border:1px solid #ffdfbf;border-radius:12px;color:#784315;font-size:12px}.footer{text-align:center;color:#91a1ad;font-size:10px;margin:22px 0 0}
+    @media(max-width:560px){body{padding:20px 13px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.top{margin-bottom:12px}.hero{padding:25px 0 19px}.panel{border-radius:19px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top"><div class="brand">AWARDS · RSVP</div><div class="tag">Guest response</div></div>
+    <header class="hero">
+      <div class="eyebrow">You're invited</div>
+      <h1>Save your seat.</h1>
+      <p>Please complete the RSVP below. Once submitted, WhatsApp will open with your answers neatly arranged in a message, ready for you to send.</p>
+    </header>
+    <section class="panel" aria-labelledby="form-title">
+      <div class="progress"><span></span></div>
+      <h2 class="section-title" id="form-title">Your RSVP details</h2>
+      <p class="hint">Fields marked with * are required.</p>
+      <form id="rsvpForm">
+        <div class="grid">
+          <div class="field wide"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" placeholder="Enter your full name" required></div>
+          <fieldset class="field wide" style="border:0;padding:0;margin:0"><legend class="legend">Will you be attending? *</legend><div class="choices">
+            <label class="choice"><input type="radio" name="attendance" value="Yes, I'll be there" required><span>Yes, I'll be there</span></label>
+            <label class="choice"><input type="radio" name="attendance" value="Sorry, I can't make it"><span>Sorry, I can't make it</span></label>
+          </div></fieldset>
+          <div class="field"><label for="phone">Contact number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 082 123 4567" required></div>
+          <div class="field"><label for="guests">Number of guests (including you) *</label><select id="guests" name="guests" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+          <div class="field wide"><label for="dietary">Dietary requirements</label><input id="dietary" name="dietary" placeholder="e.g. Vegetarian, halaal, allergies, or none"></div>
+          <div class="field wide"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" placeholder="Optional message or special requests"></textarea></div>
+        </div>
+        <div class="actions"><button class="submit" type="submit">Send RSVP via WhatsApp <span aria-hidden="true">→</span></button><span class="fine">Your answers are not stored on this website. WhatsApp opens so you can review and send your RSVP.</span></div>
+        <div class="status" id="status" role="alert"></div>
+      </form>
+    </section>
+    <p class="footer">Thank you for taking the time to RSVP.</p>
+  </main>
+  <script>
+    // Uses the WhatsApp contact currently configured on the BayWave website.
+    // Update this value if RSVP replies should go to a different organiser.
+    const WHATSAPP_NUMBER = "27824166284";
+    document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const message = [
+        "AWARDS RSVP",
+        "",
+        "Name: " + data.get("name"),
+        "Attendance: " + data.get("attendance"),
+        "Contact number: " + data.get("phone"),
+        "Number of guests: " + data.get("guests"),
+        "Dietary requirements: " + (data.get("dietary") || "Not specified"),
+        "Additional notes: " + (data.get("notes") || "None")
+      ].join("\n");
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      const opened = window.open(url, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        const status = document.getElementById("status");
+        status.style.display = "block";
+        status.textContent = "Your browser blocked the WhatsApp window. Please allow pop-ups and submit again.";
+      }
+    });
+  </script>
+</body>
+</html>
